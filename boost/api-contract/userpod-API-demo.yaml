@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: API Userpod(master)
+  version: 1.0.0
+  description: This is the OpenAPI specification for the API Userpod(master).
+  termsOfService: 'https://xyz.com/terms-of-service'
+  contact:
+    name: API Support
+    url: 'https://example.com/support'
+    email: support@example.com
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  '/user/withdraw/v1/{userId}':
+    put:
+      tags:
+        - User Withdraw V1
+      operationId: deleteByUserId
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: '123456'
+      responses:
+        '200':
+          description: OK
+      security:
+        - BearerToken: []
+components:
+  securitySchemes:
+    BearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+servers:
+  - url: 'https://api.example.com'
+    description: Production server
