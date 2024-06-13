@@ -3,5 +3,5 @@ audit:
     main: 
       discovery:
         search:
-          - *.json
-          - *.yaml
+          - '**/*.json'
+          - '**/*.yaml'
